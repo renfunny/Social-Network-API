@@ -18,7 +18,10 @@ module.exports = {
           ? res.status(404).json({ message: "No user found with this id!" })
           : res.json(user)
       )
-      .catch((err) => res.status(500).json(err));
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
   },
   createUser(req, res) {
     User.create(req.body)
