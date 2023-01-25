@@ -1,6 +1,5 @@
 // Thank you chatGPT!
-const formatDate = function () {
-  let date = new Date();
+const formatDate = function (date) {
   let month = date.toLocaleString("en-US", { month: "long" });
   let day = date.getDate();
   let ordinal = "th";
@@ -24,7 +23,5 @@ const formatDate = function () {
   }
   return `${month} ${day}${ordinal}, ${year} at ${hours}:${minutes} ${ampm}`;
 };
-
-console.log(formatDate());
 
 module.exports = formatDate;

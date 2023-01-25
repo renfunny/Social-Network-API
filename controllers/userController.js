@@ -9,15 +9,16 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
   getOneUser(req, res) {
-    User.findOne({ id: req.params.userId }).populate("thoughts"),
-      populate("friends")
-        .select("-__V")
-        .then((user) =>
-          !user
-            ? res.status(404).json({ message: "No user found with this id!" })
-            : res.json(user)
-        )
-        .catch((err) => res.status(500).json(err));
+    User.findOne({ _id: req.params.userId })
+      .populate("thoughts")
+      .populate("friends")
+      .select("-__V")
+      .then((user) =>
+        !user
+          ? res.status(404).json({ message: "No user found with this id!" })
+          : res.json(user)
+      )
+      .catch((err) => res.status(500).json(err));
   },
   createUser(req, res) {
     User.create(req.body)
@@ -53,7 +54,7 @@ module.exports = {
   addFriend(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },
-      { $addToSet: { friends: req.parmas.friendId } },
+      { $addToSet: { friends: req.params.friendId } },
       { runValidators: true, new: true }
     )
       .then((user) =>
