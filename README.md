@@ -19,11 +19,11 @@ This API is a small example of how a social network backend would look like, it 
 
 ## Installation
 
-This project does require some packages to be installed, as well as node.js to install them. If you dont have node.js installed you can do so by going to (Nodejs.org)[https://nodejs.org/en/]. Once that is done and you wish to install the required packages you can do so by opening the terminal and running the command `npm i` which will install all the dependencies found in the package.json. Once that is completed the server can be started using the command `node index.js`
+This project does require some packages to be installed, as well as node.js to install them. If you dont have node.js installed you can do so by going to [Nodejs.org](https://nodejs.org/en/). Once that is done and you wish to install the required packages you can do so by opening the terminal and running the command `npm i` which will install all the dependencies found in the package.json. Once that is completed the server can be started using the command `node index.js`
 
 ## Usage
 
-This project showcases the benefits of using mongoose when creating the backend of a social network aplication, this project can be used as a cheat sheet for whoever is trying to build a social network as this API can definetly be further developed to create a fully operational social network similar to Twitter. For a simple video walkthorugh on how the application works you may click the following link: (https://drive.google.com/file/d/1ngzb-tEqm81LQGg-I3NUwqOxUJkaFDXP/view)[https://drive.google.com/file/d/1ngzb-tEqm81LQGg-I3NUwqOxUJkaFDXP/view]
+This project showcases the benefits of using mongoose when creating the backend of a social network aplication, this project can be used as a cheat sheet for whoever is trying to build a social network as this API can definetly be further developed to create a fully operational social network similar to Twitter. For a simple video walkthorugh on how the application works you may click the following link: [https://drive.google.com/file/d/1ngzb-tEqm81LQGg-I3NUwqOxUJkaFDXP/view](https://drive.google.com/file/d/1ngzb-tEqm81LQGg-I3NUwqOxUJkaFDXP/view])
 
 ## License
 
