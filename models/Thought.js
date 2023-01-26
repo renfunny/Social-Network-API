@@ -14,7 +14,7 @@ const thoughtSchema = new Schema(
       default: Date.now,
       get: (createdAt) => {
         return formatDate(createdAt);
-      },
+      }, // getters are used to transform data before it is returned from a mongoose doc
     },
     username: {
       type: String,

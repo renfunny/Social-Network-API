@@ -8,7 +8,7 @@ module.exports = {
   },
   getOneThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
-      .select("-__V")
+      .select("-__V") //used to exclude the version key from the doc returned by a query
       .then((thought) =>
         !thought
           ? res.status(404).json({ message: "No thought found with this id!" })
@@ -21,7 +21,7 @@ module.exports = {
       .then(({ _id }) => {
         return User.findOneAndUpdate(
           { _id: req.body.userId },
-          { $push: { thoughts: _id } },
+          { $push: { thoughts: _id } }, // used to add elements to an array field in a document
           { new: true }
         );
       })
@@ -77,7 +77,10 @@ module.exports = {
           ? res.status(404).json({ message: "No thought found with this id!" })
           : res.json(thought)
       )
-      .catch((err) => res.status(500).json(err));
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
   },
   deleteReaction(req, res) {
     Thought.findOneAndUpdate(

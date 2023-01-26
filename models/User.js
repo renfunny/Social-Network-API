@@ -38,6 +38,7 @@ const userSchema = new Schema(
   }
 );
 
+// virtuals are properties that are not stored in MongoDB but calculated on the fly when the document is queried
 userSchema.virtual("friendCount").get(function () {
   return this.friends.length;
 });
